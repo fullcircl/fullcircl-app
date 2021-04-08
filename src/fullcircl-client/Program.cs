@@ -75,7 +75,7 @@ namespace FullcirclApp
                     // "window.external.receiveMessage(callback: Function)"
                     window.SendWebMessage(response);
                 })
-                .Load("wwwroot/index.html"); // Can be used with relative path strings or "new URI()" instance to load a website.
+                .Load("client-app/public/index.html"); // Can be used with relative path strings or "new URI()" instance to load a website.
 
             window.WaitForClose(); // Starts the application event loop
         }
