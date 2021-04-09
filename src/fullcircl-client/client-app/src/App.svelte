@@ -1,34 +1,46 @@
 <script lang="ts">
-	import Tailwindcss from './Tailwindcss.svelte';
+	import Tailwindcss from "./Tailwindcss.svelte";
 
 	export let name: string;
 </script>
 
 <Tailwindcss />
 <main>
-	<h1>Hello {name}!</h1>
-	<img src="logo-type.svg" alt="Fullcircl logo" />
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<nav class="bg-gray-800">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="flex items-center justify-between h-16">
+				<div class="flex items-center">
+					<div class="flex-shrink-0">
+						<img class="h-8" src="logo-type.svg" alt="Fullcircl App" />
+					</div>
+				</div>
+				<div class="hidden md:block">
+					<div class="ml-4 flex items-center md:ml-6">
+						<!-- Profile dropdown -->
+						<div class="ml-3 relative">
+							<div>
+								<button
+									type="button"
+									class="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+									id="user-menu"
+									aria-expanded="false"
+									aria-haspopup="true"
+								>
+									<span class="sr-only">Open user menu</span>
+									<img
+										class="h-8 w-8 rounded-full"
+										src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+										alt=""
+									/>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
 </main>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
 </style>
