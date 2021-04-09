@@ -1,9 +1,9 @@
 <nav class="bg-gray-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex items-center justify-between h-12">
             <div class="flex items-center">
                 <div class="flex-shrink-0">
-                    <img class="h-8" src="logo-type.svg" alt="Fullcircl App" />
+                    <img class="h-7" src="logo-type.svg" alt="Fullcircl App" />
                 </div>
             </div>
             <div class="hidden md:block">
@@ -20,7 +20,7 @@
                             >
                                 <span class="sr-only">Open user menu</span>
                                 <img
-                                    class="h-8 w-8 rounded-full"
+                                    class="h-7 w-7 rounded-full"
                                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                     alt=""
                                 />
