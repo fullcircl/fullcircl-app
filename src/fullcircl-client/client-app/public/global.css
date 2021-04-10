@@ -9,3 +9,8 @@ body {
 	padding: 0;
 	box-sizing: border-box;
 }
+
+input.dark, .dark input {
+	/* override user agent styles */
+	background-color: rgba(55, 65, 81, var(--tw-bg-opacity)) !important;
+}
