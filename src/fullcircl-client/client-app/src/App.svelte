@@ -6,7 +6,7 @@ import Message from "./Message.svelte";
 </script>
 
 <Tailwindcss />
-<main class="font-mono">
+<main class="font-mono dark:bg-gray-700 dark:text-white">
 	<Navbar />
 	<Message />
 	<InputBar />
