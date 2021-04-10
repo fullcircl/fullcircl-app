@@ -5,7 +5,7 @@
 </script>
 
 <Tailwindcss />
-<main>
+<main class="font-mono">
 	<Navbar />
 	<InputBar />
 </main>
