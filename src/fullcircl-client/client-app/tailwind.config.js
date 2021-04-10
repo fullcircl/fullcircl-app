@@ -15,6 +15,11 @@ module.exports = {
     fontFamily: {
       'mono': ['"Ubuntu Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace']
     },
+    colors: {
+      gray: {
+        700: "#32302f"
+      }
+    },
     extend: {},
   },
   variants: {
