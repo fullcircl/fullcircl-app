@@ -1,18 +1,22 @@
 <script>
-  let message = '';
-  let taHeight = 0;
+  let rowCount = 1;
+
+  function handleMessageInput(event) {
+    rowCount = (event.target.value.match(/\n/g) || []).length + 1;
+  }
 </script>
 
 <div class="absolute px-4 bottom-4 w-full">
   <div class="flex items-end dark:bg-gray-300 rounded">
     <div class="inline-block flex-1 align-bottom transform transition-all">
-      <textarea bind:value={message} bind:clientHeight={taHeight} placeholder="Message #General" class="block w-full resize-none outline-none rounded-tl rounded-bl dark:text-white-50 dark:placeholder-white-900" />
-      <div bind:clientHeight={taHeight} class="block w-full dark:text-white-50 dark:placeholder-white-900">
-        { message }
-      </div>
+      <textarea
+        on:input={handleMessageInput}
+        rows={rowCount}
+        placeholder="Message #General"
+        class="block w-full resize-none outline-none rounded-tl rounded-bl dark:text-white-50 dark:placeholder-white-900" />
     </div>
     <div class="inline-block flex-none">
-      TT
+      Tt
     </div>
   </div>
 </div>
