@@ -9,21 +9,3 @@ body {
 	padding: 0;
 	box-sizing: border-box;
 }
-
-/* override user agent styles */
-input.dark, .dark input {
-	color: #DDC7A1 !important;
-	background-color: #403C3A !important;
-}
-input.dark::placeholder, .dark input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-	color: #7C6F64;
-	opacity: 1; /* Firefox */
-}
-  
-input.dark:-ms-input-placeholder, .dark input:-ms-input-placeholder { /* Internet Explorer 10-11 */
-	color: #7C6F64;
-}
-  
-input.dark::-ms-input-placeholder, .dark input::-ms-input-placeholder { /* Microsoft Edge */
-	color: #7C6F64;
-}
