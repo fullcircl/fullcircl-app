@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
   let rowCount = 1;
 
-  function handleMessageInput(event) {
-    rowCount = (event.target.value.match(/\n/g) || []).length + 1;
+  function handleMessageInput(event: Event & { currentTarget: EventTarget & HTMLTextAreaElement; }): void {
+    rowCount = (event.currentTarget.value.match(/\n/g) || []).length + 1;
   }
 </script>
 
