@@ -17,3 +17,15 @@ updates:
     directory: "/src/fullcircl-server"
     schedule:
       interval: "weekly"
+
+  # Client Library
+  - package-ecosystem: "nuget"
+    directory: "/src/fullcircl-client-library"
+    schedule:
+      interval: "weekly"
+
+  # Data Types
+  - package-ecosystem: "nuget"
+    directory: "/src/fullcircl-data-types"
+    schedule:
+      interval: "weekly"
