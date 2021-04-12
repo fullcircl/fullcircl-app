@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Net.Mime;
 using System.Net.Sockets;
 using System.Text;
@@ -51,32 +52,33 @@ namespace Fullcircl.Server
         [ProducesResponseType(StatusCodes.Status200OK)]
         public ActionResult RedisCache()
         {
-            dynamic result = new {};
-            
-            result.Message = "A simple example with Azure Cache for Redis on ASP.NET Core.";
+            var result = new Dictionary<string, string>
+            {
+                { "Message", "A simple example with Azure Cache for Redis on ASP.NET Core." }
+            };
 
             IDatabase cache = GetDatabase();
 
             // Perform cache operations using the cache object...
 
             // Simple PING command
-            result.command1 = "PING";
-            result.command1Result = cache.Execute(result.command1).ToString();
+            result.Add("command1", "PING");
+            result.Add("command1Result", cache.Execute(result["command1"]).ToString());
 
             // Simple get and put of integral data types into the cache
-            result.command2 = "GET Message";
-            result.command2Result = cache.StringGet("Message").ToString();
+            result.Add("command2", "GET Message");
+            result.Add("command2Result", cache.StringGet("Message").ToString());
 
-            result.command3 = "SET Message \"Hello! The cache is working from ASP.NET Core!\"";
-            result.command3Result = cache.StringSet("Message", "Hello! The cache is working from ASP.NET Core!").ToString();
+            result.Add("command3", "SET Message \"Hello! The cache is working from ASP.NET Core!\"");
+            result.Add("command3Result", cache.StringSet("Message", "Hello! The cache is working from ASP.NET Core!").ToString());
 
             // Demonstrate "SET Message" executed as expected...
-            result.command4 = "GET Message";
-            result.command4Result = cache.StringGet("Message").ToString();
+            result.Add("command4", "GET Message");
+            result.Add("command4Result", cache.StringGet("Message").ToString());
 
             // Get the client list, useful to see if connection list is growing...
             // Note that this requires allowAdmin=true in the connection string
-            result.command5 = "CLIENT LIST";
+            result.Add("command5", "CLIENT LIST");
             StringBuilder sb = new StringBuilder();
             var endpoint = (System.Net.DnsEndPoint)GetEndPoints()[0];
             IServer server = GetServer(endpoint.Host, endpoint.Port);
@@ -88,7 +90,7 @@ namespace Fullcircl.Server
                 sb.AppendLine(client.Raw);
             }
 
-            result.command5Result = sb.ToString();
+            result.Add("command5Result", sb.ToString());
 
             return Ok(result);
         }
