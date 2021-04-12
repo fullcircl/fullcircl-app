@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
+[assembly: ApiController]
 namespace Fullcircl.Server
 {
     public class Startup

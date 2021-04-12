@@ -11,7 +11,6 @@ using StackExchange.Redis;
 
 namespace Fullcircl.Server
 {
-    [ApiController]
     [Route("[controller]")]
     public class HomeController : ControllerBase
     {
@@ -47,7 +46,7 @@ namespace Fullcircl.Server
 
         private static Lazy<ConnectionMultiplexer> lazyConnection = CreateConnection();
 
-        [HttpGet]
+        [HttpGet("redis-cache")]
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public ActionResult RedisCache()
