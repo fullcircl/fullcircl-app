@@ -20,5 +20,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\fullcircl-client-library\Fullcircl.ClientLibrary.csproj" />
+    <ProjectReference Include="..\fullcircl-data-types\Fullcircl.DataTypes.csproj" />
   </ItemGroup>
 </Project>
