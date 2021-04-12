@@ -38,16 +38,16 @@ namespace FullcirclApp
                 // registered during initialization of a PhotinoWindow instance.
                 // These handlers are fired before and after the native constructor
                 // method is called.
-                options.WindowCreatingHandler += (object sender, EventArgs args) =>
+                options.WindowCreatingHandler += (object? sender, EventArgs args) =>
                 {
-                    var window = (PhotinoWindow)sender; // Instance is not initialized at this point. Class properties are not set yet.
+                    var window = sender as PhotinoWindow; // Instance is not initialized at this point. Class properties are not set yet.
                     Console.WriteLine($"Creating new PhotinoWindow instance.");
                 };
 
-                options.WindowCreatedHandler += (object sender, EventArgs args) =>
+                options.WindowCreatedHandler += (object? sender, EventArgs args) =>
                 {
-                    var window = (PhotinoWindow)sender; // Instance is initialized. Class properties are now set and can be used.
-                    Console.WriteLine($"Created new PhotinoWindow instance with title {window.Title}.");
+                    var window = sender as PhotinoWindow; // Instance is initialized. Class properties are now set and can be used.
+                    Console.WriteLine($"Created new PhotinoWindow instance with title {window?.Title}.");
                 };
             };
 
@@ -64,8 +64,8 @@ namespace FullcirclApp
                 // PhotinoWindow was instantiated by calling a registration 
                 // method like the following RegisterWebMessageReceivedHandler.
                 // This could be added in the PhotinoWindowOptions if preferred.
-                .RegisterWebMessageReceivedHandler((object sender, string message) => {
-                    var window = (PhotinoWindow)sender;
+                .RegisterWebMessageReceivedHandler((object? sender, string message) => {
+                    var window = sender as PhotinoWindow;
 
                     // The message argument is coming in from sendMessage.
                     // "window.external.sendMessage(message: string)"
@@ -73,7 +73,7 @@ namespace FullcirclApp
 
                     // Send a message back the to JavaScript event handler.
                     // "window.external.receiveMessage(callback: Function)"
-                    window.SendWebMessage(response);
+                    window?.SendWebMessage(response);
                 })
                 .Load("web-app/public/index.html"); // Can be used with relative path strings or "new URI()" instance to load a website.
 

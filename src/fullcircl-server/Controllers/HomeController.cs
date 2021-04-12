@@ -18,12 +18,23 @@ namespace Fullcircl.Server
         public HomeController(ILogger<HomeController> logger, IConfiguration configuration)
         {
             _logger = logger;
+            
             if (Configuration == null)
-                Configuration = configuration;
+            {
+                lock(_syncRoot)
+                {
+                    if (Configuration == null)
+                    {
+                        Configuration = configuration;
+                    }
+                }
+            }
         }
 
+        private static readonly object _syncRoot = new {};
+
         private readonly ILogger<HomeController> _logger;
-        private static IConfiguration Configuration { get; set; }
+        private static IConfiguration? Configuration { get; set; }
 
         private const string SecretName = "RedisConnection";
 
@@ -52,7 +63,7 @@ namespace Fullcircl.Server
         [ProducesResponseType(StatusCodes.Status200OK)]
         public ActionResult RedisCache()
         {
-            var result = new Dictionary<string, string>
+            var result = new Dictionary<string, string?>
             {
                 { "Message", "A simple example with Azure Cache for Redis on ASP.NET Core." }
             };
@@ -63,18 +74,18 @@ namespace Fullcircl.Server
 
             // Simple PING command
             result.Add("command1", "PING");
-            result.Add("command1Result", cache.Execute(result["command1"]).ToString());
+            result.Add("command1Result", cache?.Execute(result["command1"])?.ToString());
 
             // Simple get and put of integral data types into the cache
             result.Add("command2", "GET Message");
-            result.Add("command2Result", cache.StringGet("Message").ToString());
+            result.Add("command2Result", cache?.StringGet("Message").ToString());
 
             result.Add("command3", "SET Message \"Hello! The cache is working from ASP.NET Core!\"");
-            result.Add("command3Result", cache.StringSet("Message", "Hello! The cache is working from ASP.NET Core!").ToString());
+            result.Add("command3Result", cache?.StringSet("Message", "Hello! The cache is working from ASP.NET Core!").ToString());
 
             // Demonstrate "SET Message" executed as expected...
             result.Add("command4", "GET Message");
-            result.Add("command4Result", cache.StringGet("Message").ToString());
+            result.Add("command4Result", cache?.StringGet("Message").ToString());
 
             // Get the client list, useful to see if connection list is growing...
             // Note that this requires allowAdmin=true in the connection string
