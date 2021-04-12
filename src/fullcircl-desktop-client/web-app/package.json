@@ -8,7 +8,7 @@
     "validate": "svelte-check"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^16.0.0",
+    "@rollup/plugin-commonjs": "^18.0.0",
     "@rollup/plugin-node-resolve": "^11.2.1",
     "autoprefixer": "^10.1.0",
     "postcss": "^8.2.10",
