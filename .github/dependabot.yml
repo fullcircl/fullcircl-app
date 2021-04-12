@@ -2,11 +2,11 @@ version: 2
 updates:
 
   - package-ecosystem: "npm"
-    directory: "/"
+    directory: "/src/fullcircl-desktop-client/web-app"
     schedule:
       interval: "weekly"
 
   - package-ecosystem: "nuget"
-    directory: "/"
+    directory: "/src/fullcircl-desktop-client"
     schedule:
       interval: "weekly"
