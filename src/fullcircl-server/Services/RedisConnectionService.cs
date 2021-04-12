@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using Microsoft.Extensions.Configuration;
@@ -165,7 +166,7 @@ namespace Fullcircl.Server.Services
             return BasicRetry(() => Connection.GetDatabase());
         }
 
-        public System.Net.EndPoint[] GetEndPoints()
+        public EndPoint[] GetEndPoints()
         {
             return BasicRetry(() => Connection.GetEndPoints());
         }

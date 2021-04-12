@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Mime;
 using System.Text;
 using Fullcircl.Server.Services;
@@ -54,7 +55,7 @@ namespace Fullcircl.Server
             // Note that this requires allowAdmin=true in the connection string
             result.Add("command5", "CLIENT LIST");
             StringBuilder sb = new StringBuilder();
-            var endpoint = (System.Net.DnsEndPoint)_redis.GetEndPoints()[0];
+            var endpoint = (DnsEndPoint)_redis.GetEndPoints()[0];
             IServer server = _redis.GetServer(endpoint.Host, endpoint.Port);
             ClientInfo[] clients = server.ClientList();
 
