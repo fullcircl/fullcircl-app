@@ -1,12 +1,19 @@
 version: 2
 updates:
-
+  # Web App
   - package-ecosystem: "npm"
     directory: "/src/fullcircl-desktop-client/web-app"
     schedule:
       interval: "weekly"
 
+  # Photino Desktop App
   - package-ecosystem: "nuget"
     directory: "/src/fullcircl-desktop-client"
+    schedule:
+      interval: "weekly"
+
+  # Server App
+  - package-ecosystem: "nuget"
+    directory: "/src/fullcircl-server"
     schedule:
       interval: "weekly"
