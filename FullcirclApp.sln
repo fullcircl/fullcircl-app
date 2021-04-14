@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EA30C3B3-7C6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fullcircl.ClientLibrary", "src\fullcircl-client-library\Fullcircl.ClientLibrary.csproj", "{7372D22B-CE19-4DAF-B67E-E40109E5A271}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullcirclDesktopClient", "src\fullcircl-desktop-client\FullcirclDesktopClient.csproj", "{E18A188F-CF05-4FF0-B8DF-F0B3B479A791}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fullcircl.DesktopClient", "src\fullcircl-desktop-client\Fullcircl.DesktopClient.csproj", "{E18A188F-CF05-4FF0-B8DF-F0B3B479A791}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fullcircl.Server", "src\fullcircl-server\Fullcircl.Server.csproj", "{3219C579-0E27-4CC5-A218-50B1A670DA90}"
 EndProject
