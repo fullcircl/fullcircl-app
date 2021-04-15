@@ -1,4 +1,4 @@
-<nav class="flex-none bg-gray-800">
+<nav class="flex-none bg-gray-darkest">
     <div class="max-w-7xl mx-auto px-4">
         <div class="flex items-center justify-between h-12">
             <div class="flex items-center">
@@ -13,7 +13,7 @@
                         <div>
                             <button
                                 type="button"
-                                class="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                                class="max-w-xs bg-gray-darkest rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-darkest focus:ring-white"
                                 id="user-menu"
                                 aria-expanded="false"
                                 aria-haspopup="true"

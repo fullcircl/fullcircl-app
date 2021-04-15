@@ -13,7 +13,7 @@
         on:input={handleMessageInput}
         rows={rowCount}
         placeholder="Message #General"
-        class="block w-full resize-none p-4 outline-none rounded-tl rounded-bl dark:text-white-50 dark:placeholder-white-900" />
+        class="block w-full resize-none p-4 outline-none rounded-tl rounded-bl dark:text-white dark:placeholder-white-dimmest" />
     </div>
     <div class="inline-block flex-none">
       Tt
