@@ -1,19 +1,21 @@
 <script lang="ts">
-  let rowCount = 1;
+  import { onMount } from 'svelte';
+  import * as autosize from 'autosize';
 
-  function handleMessageInput(event: Event & { currentTarget: EventTarget & HTMLTextAreaElement; }): void {
-    rowCount = (event.currentTarget.value.match(/\n/g) || []).length + 1;
-  }
+  let messageBox: HTMLTextAreaElement;
+
+  onMount(() => {
+    autosize.default(messageBox);
+  });
 </script>
 
 <div class="absolute px-4 bottom-4 w-full">
   <div class="flex items-end dark:bg-gray-300 rounded pr-4">
     <div class="inline-block flex-1 align-bottom transform transition-all">
       <textarea
-        on:input={handleMessageInput}
-        rows={rowCount}
+        bind:this={messageBox}
         placeholder="Message #General"
-        class="block w-full resize-none p-4 outline-none rounded-tl rounded-bl dark:text-white dark:placeholder-white-dimmest" />
+        class="block w-full h-12 resize-none p-4 outline-none rounded-tl rounded-bl dark:text-white dark:placeholder-white-dimmest" />
     </div>
     <div class="inline-block flex-none">
       Tt
