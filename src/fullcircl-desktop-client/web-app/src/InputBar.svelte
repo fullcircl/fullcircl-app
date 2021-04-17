@@ -17,9 +17,7 @@
         placeholder="Message #General"
         class="block w-full h-12 resize-none p-4 outline-none rounded-tl rounded-bl dark:text-white dark:placeholder-white-dimmest" />
     </div>
-    <div class="inline-block flex-none">
-      Tt
-    </div>
+    <span class="inline-block flex-none material-icons">send</span>
   </div>
 </div>
 
